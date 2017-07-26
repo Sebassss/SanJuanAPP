@@ -29,13 +29,13 @@ namespace SanJuanAPP.Views
             CapsModel model = new CapsModel();
             int x = Int32.Parse(csId);
 
-            var query = db.getAll<CapsModel>().ToList().Where(r => r.DPTO == x);
+            var query = db.getAll<CapsModel>().ToList().Where(r => r.DEPTO == x);
 
             
             lbl_nombre.Text = model.NOMBRE;
             lbl_direccion.Text = model.DIRECCION;
-            lbl_latitud.Text = model.LAT;
-            lbl_longitud.Text = model.LNG;
+            lbl_latitud.Text = model.LATITUD;
+            lbl_longitud.Text = model.LONGITUD;
             lbl_telefono.Text = model.TELEFONO;
 
 

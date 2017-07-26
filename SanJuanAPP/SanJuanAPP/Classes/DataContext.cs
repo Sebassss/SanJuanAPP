@@ -43,7 +43,15 @@ namespace SanJuanAPP.Classes
         #region metodos ABM
         public void update<T>(T model)
         {
-            conn.Update(model);
+            try
+            {
+                conn.Update(model);
+            }
+            catch( Exception ex)
+            {
+                throw new NotImplementedException();
+            }
+            
         }
 
         public void delete<T>(T model)

@@ -36,8 +36,11 @@ namespace SanJuanAPP
         {
             try
             {
+                int j = 0;
+                DateTime fecha = DateTime.Now;
                 HttpClient cliente = new HttpClient();
-                cliente.BaseAddress = new Uri("http://10.64.64.218:1941");
+                //cliente.BaseAddress = new Uri("http://10.64.64.218:1941");
+                cliente.BaseAddress = new Uri("http://192.168.100.24");
                 cliente.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 var token = System.Net.WebUtility.UrlEncode(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -49,26 +52,50 @@ namespace SanJuanAPP
                 CapsModel local_caps = new CapsModel();
                 dbContext db_caps = new dbContext();
 
-                FileDownload fd = new FileDownload();
-                fd.Donwload("imagen.jpg", "http://sites.psu.edu/isa108/wp-content/uploads/sites/13037/2014/06/3461205-871812-sleeping-emoticon.jpg");
+                //FileDownload fd = new FileDownload();
+                //fd.Donwload("imagen.jpg", "http://sites.psu.edu/isa108/wp-content/uploads/sites/13037/2014/06/3461205-871812-sleeping-emoticon.jpg");
 
                 vm_caps.llenarListado();
                 if (vm_caps.List.Count == 0)
                 {
                     for(int i=0; i<www_caps.Count;i++)
                     {
+                        local_caps.UPDATE = fecha;
+                        local_caps.DEPTO = www_caps[i].DEPTO;
                         local_caps.DIRECCION = www_caps[i].DIRECCION;
-                        local_caps.LAT = www_caps[i].LAT;
-                        local_caps.LNG = www_caps[i].LNG;
+                        local_caps.LATITUD = www_caps[i].LATITUD;
+                        local_caps.LONGITUD = www_caps[i].LONGITUD;
                         local_caps.NOMBRE = www_caps[i].NOMBRE;
                         local_caps.TELEFONO = www_caps[i].TELEFONO;
-                        local_caps.IMAGE = www_caps[i].IMAGE;
+                        local_caps.IMGURL = www_caps[i].IMGURL;
                         db_caps.add(local_caps);
 
                         
                     }
                 }
-                
+                else
+                {
+                    
+
+                    for (int i = 0; i < www_caps.Count; i++)
+                    {
+
+                        j= j+1;
+                        //local_caps.ID = vm_caps.ID;
+                        local_caps.ID = j;
+                        local_caps.UPDATE = fecha;
+                        local_caps.DEPTO = www_caps[i].DEPTO;
+                        local_caps.DIRECCION = www_caps[i].DIRECCION;
+                        local_caps.LATITUD = www_caps[i].LATITUD;
+                        local_caps.LONGITUD = www_caps[i].LONGITUD;
+                        local_caps.NOMBRE = www_caps[i].NOMBRE;
+                        local_caps.TELEFONO = www_caps[i].TELEFONO;
+                        local_caps.IMGURL = www_caps[i].IMGURL;
+                        db_caps.update(local_caps);
+                      
+                    }
+                }
+                db_caps.Dispose();
                 
 
 

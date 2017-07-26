@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SanJuanAPP.Views.CapsList">
+
+    <StackLayout>
+        <Label Text="Departamento: " HorizontalOptions="Center" Font="25" TextColor="Green"></Label>
+        <ListView x:Name="LIST"  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                            <Label ClassId="{Binding ID}" FontSize="18" x:Name="lbl_nombre" Text="{Binding NOMBRE}">
+                            </Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+    
+</ContentPage>

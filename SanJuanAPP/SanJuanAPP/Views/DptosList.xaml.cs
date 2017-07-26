@@ -23,7 +23,7 @@ namespace SanJuanAPP.Views
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             var imageSender = (Label)sender;
-            Navigation.PushModalAsync(new Views.CapsDetail(imageSender.ClassId.ToString()));
+            Navigation.PushModalAsync(new Views.CapsList(imageSender.ClassId.ToString()));
         }
     }
 }

@@ -21,12 +21,13 @@ namespace SanJuanAPP.Models
 
         //private apkSalud.Class.dbContext db;
         private int Id;
+        private DateTime update;
         private string latitud;
         private string longitud;
         private string nombre;
         private string direccion;
         private string telefono;
-        private int dpto;
+        private int depto;
         private string ImgUrl;
 
 
@@ -53,75 +54,6 @@ namespace SanJuanAPP.Models
                 }
             }
         }
-
-        //Latitud
-        public string LAT
-        {
-            get
-            {
-                return latitud;
-            }
-            set
-            {
-                if (latitud != value)
-                {
-                    latitud = value;
-                    OnPropertyChanged("latitud");
-                }
-            }
-        }
-
-        //Dpto
-        public int DPTO
-        {
-            get
-            {
-                return dpto;
-            }
-            set
-            {
-                if (dpto != value)
-                {
-                    dpto = value;
-                    OnPropertyChanged("dpto");
-                }
-            }
-        }
-
-        //ImageUrl
-        public string IMAGE
-        {
-            get
-            {
-                return ImgUrl;
-            }
-            set
-            {
-                if (ImgUrl != value)
-                {
-                    ImgUrl = value;
-                    OnPropertyChanged("ImgUrl");
-                }
-            }
-        }
-
-        //Longitud
-        public string LNG
-        {
-            get
-            {
-                return longitud;
-            }
-            set
-            {
-                if (longitud != value)
-                {
-                    longitud = value;
-                    OnPropertyChanged("longitud");
-                }
-            }
-        }
-
         //Nombre
         public string NOMBRE
         {
@@ -138,6 +70,95 @@ namespace SanJuanAPP.Models
                 }
             }
         }
+
+        //Latitud
+        public string LATITUD
+        {
+            get
+            {
+                return latitud;
+            }
+            set
+            {
+                if (latitud != value)
+                {
+                    latitud = value;
+                    OnPropertyChanged("latitud");
+                }
+            }
+        }
+
+        //Longitud
+        public string LONGITUD
+        {
+            get
+            {
+                return longitud;
+            }
+            set
+            {
+                if (longitud != value)
+                {
+                    longitud = value;
+                    OnPropertyChanged("longitud");
+                }
+            }
+        }
+
+        //Update
+        public DateTime UPDATE
+        {
+            get
+            {
+                return update;
+            }
+            set
+            {
+                if (update != value)
+                {
+                    update = value;
+                    OnPropertyChanged("update");
+                }
+            }
+        }
+
+        //Dpto
+        public int DEPTO
+        {
+            get
+            {
+                return depto;
+            }
+            set
+            {
+                if (depto != value)
+                {
+                    depto = value;
+                    OnPropertyChanged("depto");
+                }
+            }
+        }
+
+        //ImageUrl
+        public string IMGURL
+        {
+            get
+            {
+                return ImgUrl;
+            }
+            set
+            {
+                if (ImgUrl != value)
+                {
+                    ImgUrl = value;
+                    OnPropertyChanged("ImgUrl");
+                }
+            }
+        }
+
+      
+
+      
 
         //Direccion
         public string DIRECCION
