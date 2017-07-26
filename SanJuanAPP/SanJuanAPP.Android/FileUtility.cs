@@ -12,6 +12,7 @@ using Android.Widget;
 using SanJuanAPP.Interfaces;
 using Xamarin.Forms;
 using System.IO;
+using System.Net;
 
 [assembly: Dependency(typeof(SanJuanAPP.Droid.FileUtility))]
 namespace SanJuanAPP.Droid
@@ -21,7 +22,9 @@ namespace SanJuanAPP.Droid
         public string SaveFile(string fileName, string imageurl)
         {
             string path = null;
-            byte [] size = new System.Net.WebClient().DownloadData(imageurl); // File.ReadAllBytes(fileName);
+            WebClient webClient = new WebClient();
+            webClient.Headers.Add("user-agent", "ASP.NET WebClient");
+            byte [] size = webClient.DownloadData(imageurl); // File.ReadAllBytes(fileName);
             string imageFolderPath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "SanJuanAPP");
 
             //Check if the folder exist or not

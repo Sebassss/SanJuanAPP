@@ -26,8 +26,8 @@ namespace SanJuanAPP
              */
 
 
-            //AgregarDptos();
-            //SincronizarDatos();
+            AgregarDptos();
+            SincronizarDatos();
 
         }
 
@@ -37,11 +37,11 @@ namespace SanJuanAPP
             try
             {
                 HttpClient cliente = new HttpClient();
-                cliente.BaseAddress = new Uri("http://192.168.100.24");
+                cliente.BaseAddress = new Uri("http://10.64.64.218:1941");
                 cliente.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 var token = System.Net.WebUtility.UrlEncode(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                var respuesta = cliente.GetStringAsync("/apk/?fecha="+token).Result;
+                var respuesta = cliente.GetStringAsync("/api/ubicaciones?fecha=" + token).Result;
                 
                 var www_caps = JsonConvert.DeserializeObject<List<CapsModel>>(respuesta);
 
