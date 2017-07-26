@@ -20,7 +20,7 @@ namespace SanJuanAPP.Droid
     public class FileUtility : IFileUtility
     {
         public string SaveFile(string fileName, string imageurl)
-        {
+        { 
             string path = null;
             WebClient webClient = new WebClient();
             webClient.Headers.Add("user-agent", "ASP.NET WebClient");
