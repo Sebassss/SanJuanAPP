@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SanJuanAPP.Views.GpsOrDpto">
+
+
+    <Grid BackgroundColor="#940f12" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="90" />
+            <RowDefinition Height="90" />
+            <RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+
+
+        <Image Source="mainBanner.png" Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="0" />
+
+
+
+        <Image x:Name="gallery" Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="2" Aspect="Fill" 
+                Source="gallery.png"
+                BackgroundColor="White"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand"
+               
+            >
+        </Image>
+
+
+
+        <Grid Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"  />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+
+            <Button ClassId="btnEncontrarCs"
+                BackgroundColor="#fff"
+                TextColor="#000"
+                Grid.ColumnSpan="3"
+            ></Button>
+
+            <Label ClassId="btnEncontrarCs"
+                Text="Utilizando mi dispositivo"
+                TextColor="#000"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                ></Label>
+
+            <Image ClassId="btnEncontrarCs"
+                Source="btnMap.png"
+                BackgroundColor="Transparent"
+                Scale="0.8"
+            >
+                
+
+            </Image>
+
+        </Grid>
+        <!--END botón de mapa-->
+
+        <!--START botón de protur-->
+        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button 
+                BackgroundColor="#fff"  
+                Grid.ColumnSpan="3"
+                Clicked="Button_btnDptosList_Clicked"
+            ></Button>
+
+            <Label ClassId="btnListDptos"
+                Text="Por Departamento"
+                TextColor="#000"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Image ClassId="btnListDptos"
+                Source="btnProtur.png"
+                BackgroundColor="Transparent"
+                Scale="0.8">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+        </Grid>
+        <!--END botón de protur-->
+
+
+
+
+
+
+        <Label TextColor="#fff"  Text="Ministerio de Salud Pública San Juan - Argentina"  Grid.Row="4"  Grid.ColumnSpan="2"  HorizontalOptions="Center" />
+
+
+
+
+
+
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SanJuanAPP.Views.CapsDetail">
+    <StackLayout>
+        <Label x:Name="lbl_nombre" Text="Centro de Salud: " HorizontalOptions="Center" Font="25" TextColor="Green"></Label>
+        <Label x:Name="lbl_direccion" Text="Datos"></Label>
+        <Label x:Name="lbl_telefono" Text="Datos"></Label>
+        <Label x:Name="lbl_latitud" Text="Datos"></Label>
+        <Label x:Name="lbl_longitud" Text="Datos"></Label>
+    </StackLayout>
+</ContentPage>
