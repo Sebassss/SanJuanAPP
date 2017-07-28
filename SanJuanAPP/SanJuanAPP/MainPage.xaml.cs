@@ -9,7 +9,6 @@ using SanJuanAPP.Models;
 using SanJuanAPP.ViewModels;
 
 
-
 using SanJuanAPP.Interfaces;
 
 
@@ -36,6 +35,7 @@ namespace SanJuanAPP
 
         public void SincronizarDatos()
         {
+            
             /*
             try
             {
