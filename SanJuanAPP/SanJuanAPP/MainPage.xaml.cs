@@ -7,10 +7,11 @@ using Xamarin.Forms;
 using SanJuanAPP.Classes;
 using SanJuanAPP.Models;
 using SanJuanAPP.ViewModels;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using Newtonsoft.Json;
+
+
+
 using SanJuanAPP.Interfaces;
+
 
 namespace SanJuanAPP
 {
@@ -32,8 +33,10 @@ namespace SanJuanAPP
         }
 
         
+
         public void SincronizarDatos()
         {
+            /*
             try
             {
                 int j = 0;
@@ -46,7 +49,9 @@ namespace SanJuanAPP
                 var token = System.Net.WebUtility.UrlEncode(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 var respuesta = cliente.GetStringAsync("/api/ubicaciones?fecha=" + token).Result;
                 
-                var www_caps = JsonConvert.DeserializeObject<List<CapsModel>>(respuesta);
+                
+                //var www_caps = JsonConvert.DeserializeObject<List<CapsModel>>(respuesta);
+                var www_caps =  //JsonConvert.DeserializeObject<List<CapsModel>>(respuesta);
 
                 CapsViewModel vm_caps = new CapsViewModel();
                 CapsModel local_caps = new CapsModel();
@@ -111,10 +116,10 @@ namespace SanJuanAPP
             {
                 return;
             }
-
+            */
         }
 
-
+        
         private void AgregarDptos()
         {
 

@@ -39,7 +39,7 @@ namespace SanJuanAPP.Droid
             {
                 if (Plataforma == null)
                 {
-                    Plataforma = new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroid();
+                    Plataforma = new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroidN();
                 }
                 return Plataforma;
             }
