@@ -7,10 +7,11 @@ using Xamarin.Forms;
 using SanJuanAPP.Classes;
 using SanJuanAPP.Models;
 using SanJuanAPP.ViewModels;
-
+using System.Net.Http;
 
 using SanJuanAPP.Interfaces;
-
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
 
 namespace SanJuanAPP
 {
@@ -25,6 +26,18 @@ namespace SanJuanAPP
              * Cargo Los departamentos en la bd por unica vez. 
              */
 
+            HttpClient cliente = new HttpClient();
+            cliente.BaseAddress = new Uri("http://10.64.64.218:1941");
+            cliente.BaseAddress = new Uri("http://192.168.100.24");
+            cliente.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            var token = System.Net.WebUtility.UrlEncode(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            var respuesta = cliente.GetStringAsync("/api/ubicaciones?fecha=" + token).Result;
+
+            var www_caps = JsonConvert.DeserializeObject<List<CapsModel>>(respuesta);
+
+            FileDownload fd = new FileDownload();
+            fd.Donwload("imagen.jpg", "http://sites.psu.edu/isa108/wp-content/uploads/sites/13037/2014/06/3461205-871812-sleeping-emoticon.jpg");
 
             AgregarDptos();
             SincronizarDatos();
