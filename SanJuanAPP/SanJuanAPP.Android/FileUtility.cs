@@ -47,6 +47,7 @@ namespace SanJuanAPP.Droid
             return path;
         }
 
+        
         public void DeleteDirectory()
         {
             string imageFolderPath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "ProductImages");

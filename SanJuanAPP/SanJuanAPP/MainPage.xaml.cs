@@ -12,6 +12,7 @@ using System.Net.Http;
 using SanJuanAPP.Interfaces;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using CarouselView;
 
 namespace SanJuanAPP
 {
@@ -26,21 +27,37 @@ namespace SanJuanAPP
              * Cargo Los departamentos en la bd por unica vez. 
              */
 
-            HttpClient cliente = new HttpClient();
-            cliente.BaseAddress = new Uri("http://10.64.64.218:1941");
-            cliente.BaseAddress = new Uri("http://192.168.100.24");
-            cliente.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var names = new List<string> {
 
-            var token = System.Net.WebUtility.UrlEncode(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            var respuesta = cliente.GetStringAsync("/api/ubicaciones?fecha=" + token).Result;
+                "Seba", "Maria paz", "Sebita", "Laura"
+            };
 
-            var www_caps = JsonConvert.DeserializeObject<List<CapsModel>>(respuesta);
 
-            FileDownload fd = new FileDownload();
-            fd.Donwload("imagen.jpg", "http://sites.psu.edu/isa108/wp-content/uploads/sites/13037/2014/06/3461205-871812-sleeping-emoticon.jpg");
+
+            //HttpClient cliente = new HttpClient();
+            //cliente.BaseAddress = new Uri("http://sanjuan.gov.ar");
+            //cliente.BaseAddress = new Uri("http://192.168.100.24");
+            //cliente.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            //var token = System.Net.WebUtility.UrlEncode(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
+            
+
+            //var respuesta = cliente.GetStringAsync("/gen/gobierno/app/noticias/salud/c/index.json").Result;
+
+
+            //var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(respuesta);
+            //var postalCode = dict["nf"];
+
+            //Array is also possible
+            //string[] result = dict.Select(kv => kv.Value.ToString()).ToArray();
+            //carousel.ItemsSource = www_caps;
+
+            //FileDownload fd = new FileDownload();
+            //fd.Donwload("imagen.jpg", "http://sites.psu.edu/isa108/wp-content/uploads/sites/13037/2014/06/3461205-871812-sleeping-emoticon.jpg");
 
             AgregarDptos();
-            SincronizarDatos();
+            //SincronizarDatos();
 
         }
 
