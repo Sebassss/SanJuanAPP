@@ -27,34 +27,44 @@ namespace SanJuanAPP
              * Cargo Los departamentos en la bd por unica vez. 
              */
 
-            var names = new List<string> {
-
-                "Seba", "Maria paz", "Sebita", "Laura"
-            };
+            
 
 
 
-            //HttpClient cliente = new HttpClient();
-            //cliente.BaseAddress = new Uri("http://sanjuan.gov.ar");
+            HttpClient cliente = new HttpClient();
+            cliente.BaseAddress = new Uri("http://sanjuan.gov.ar");
             //cliente.BaseAddress = new Uri("http://192.168.100.24");
-            //cliente.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            cliente.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             //var token = System.Net.WebUtility.UrlEncode(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
             
 
-            //var respuesta = cliente.GetStringAsync("/gen/gobierno/app/noticias/salud/c/index.json").Result;
+            var respuesta = cliente.GetStringAsync("/gen/gobierno/app/noticias/salud/c/index.json").Result;
+            var respuesta2 = "[" + respuesta + "]"; //Arreglo el Json De NITO 
+            var resp = JsonConvert.DeserializeObject<List<NoticiasModel>>(respuesta2);
 
 
-            //var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(respuesta);
-            //var postalCode = dict["nf"];
+            var names = new List<string> {
 
-            //Array is also possible
-            //string[] result = dict.Select(kv => kv.Value.ToString()).ToArray();
-            //carousel.ItemsSource = www_caps;
+                "http://sanjuan.gov.ar/recursos/C0E2C2CA1A31D5D231CFB340E0B73979.jpeg",
+                "Maria paz", "Sebita", "Laura"
+            };
 
-            //FileDownload fd = new FileDownload();
-            //fd.Donwload("imagen.jpg", "http://sites.psu.edu/isa108/wp-content/uploads/sites/13037/2014/06/3461205-871812-sleeping-emoticon.jpg");
+            List<string> x = new List<string>();
+            foreach (var img in resp)
+            {
+                string nombre = img.NF.Replace("recursos/", "").Replace(".jpeg", ".jpg");
+                FileDownload fd = new FileDownload();
+                fd.Donwload(nombre, cliente.BaseAddress + img.NF);
+                x.Add("/data/user/0/SanJuanAPP.Android/files/SanJuanAPP/"+ nombre);
+            }
+            
+
+            //carousel.ItemsSource =  resp.Select(x => new List<Uri> { cliente.BaseAddress. x.NF}).ToList();
+            carousel.ItemsSource = x;//;resp.Select(x => new List<string> { cliente.BaseAddress +  x.NF }).ToList(); 
+
+
 
             AgregarDptos();
             //SincronizarDatos();

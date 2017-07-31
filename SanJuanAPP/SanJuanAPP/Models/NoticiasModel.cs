@@ -34,7 +34,7 @@ namespace SanJuanAPP.Models
         private string no;
         private int oid;
         private string nr;
-        //private string nfecha;
+        private string nfec;
 
         public int NID
         {
@@ -111,22 +111,22 @@ namespace SanJuanAPP.Models
                 }
             }
         }
-        /*
-        public string NFECHA
+        
+        public string NFEC
         {
             get
             {
-                return nf;
+                return nfec;
             }
             set
             {
-                if (nf != value)
+                if (nfec != value)
                 {
-                    nf = value;
-                    OnPropertyChanged("nf");
+                    nfec = value;
+                    OnPropertyChanged("nfec");
                 }
             }
         }
-        */
+        
     }
 }

@@ -4,7 +4,7 @@
              x:Class="SanJuanAPP.Views.CapsList">
 
     <StackLayout>
-        <Label Text="Departamento: " HorizontalOptions="Center" Font="25" TextColor="Green"></Label>
+        <Label Text="Departamento: " HorizontalOptions="Center" Font="25" TextColor="Green"></Label> 
         <ListView x:Name="LIST"  HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>

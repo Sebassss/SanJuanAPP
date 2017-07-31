@@ -7,6 +7,6 @@
         <Label x:Name="lbl_direccion" Text="Datos"></Label>
         <Label x:Name="lbl_telefono" Text="Datos"></Label>
         <Label x:Name="lbl_latitud" Text="Datos"></Label>
-        <Label x:Name="lbl_longitud" Text="Datos"></Label>
+        <Label x:Name="lbl_longitud" Text="Datos"></Label> 
     </StackLayout>
 </ContentPage>

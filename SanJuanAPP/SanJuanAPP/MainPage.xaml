@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:SanJuanAPP"
              x:Class="SanJuanAPP.MainPage"
-             xmlns:forms="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:forms="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions" 
              >
 
     
@@ -41,12 +41,13 @@
         <forms:CarouselViewControl x:Name="carousel" Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#333"  >
             <forms:CarouselViewControl.ItemTemplate>
                 <DataTemplate>
-
-                    <Image Aspect="Fill" 
+                    
+                    <Image Aspect="AspectFill" 
                         BackgroundColor="White"
                        VerticalOptions="FillAndExpand"
                        HorizontalOptions="FillAndExpand"
-                       Source="{Binding NF}"/>
+                       Source="{Binding .}"/>
+                    
                 </DataTemplate>
             </forms:CarouselViewControl.ItemTemplate>
         </forms:CarouselViewControl>

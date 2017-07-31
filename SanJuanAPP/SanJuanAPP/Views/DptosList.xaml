@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SanJuanAPP.Views.DptosList">
     <StackLayout>
-        <Label Text="Por departamento" HorizontalOptions="Center" Font="25" TextColor="Green"></Label>
+        <Label Text="Por departamento" HorizontalOptions="Center" Font="25" TextColor="Green"></Label> 
         <ListView x:Name="LIST"  HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
