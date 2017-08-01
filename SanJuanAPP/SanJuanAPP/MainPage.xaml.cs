@@ -13,11 +13,17 @@ using SanJuanAPP.Interfaces;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using CarouselView;
+using System.Collections.ObjectModel;
+using System.Text.RegularExpressions;
 
 namespace SanJuanAPP
 {
     public partial class MainPage : ContentPage
     {
+
+        public ObservableCollection<NoticiasModel> Notas { get; set; }
+
+
         public MainPage()
         {
             InitializeComponent();
@@ -26,10 +32,6 @@ namespace SanJuanAPP
              * Consulto la API verifico update de datos de caps
              * Cargo Los departamentos en la bd por unica vez. 
              */
-
-            
-
-
 
             HttpClient cliente = new HttpClient();
             cliente.BaseAddress = new Uri("http://sanjuan.gov.ar");
@@ -44,33 +46,41 @@ namespace SanJuanAPP
             var respuesta2 = "[" + respuesta + "]"; //Arreglo el Json De NITO 
             var resp = JsonConvert.DeserializeObject<List<NoticiasModel>>(respuesta2);
 
+            
 
-            var names = new List<string> {
-
-                "http://sanjuan.gov.ar/recursos/C0E2C2CA1A31D5D231CFB340E0B73979.jpeg",
-                "Maria paz", "Sebita", "Laura"
-            };
-
+            
             List<string> x = new List<string>();
+            Notas = new ObservableCollection<NoticiasModel>();
             foreach (var img in resp)
             {
                 string nombre = img.NF.Replace("recursos/", "").Replace(".jpeg", ".jpg");
-                FileDownload fd = new FileDownload();
-                fd.Donwload(nombre, cliente.BaseAddress + img.NF);
-                x.Add("/data/user/0/SanJuanAPP.Android/files/SanJuanAPP/"+ nombre);
+                //FileDownload fd = new FileDownload();
+                //fd.Donwload(nombre, cliente.BaseAddress + img.NF);
+                //x.Add("/data/user/0/SanJuanAPP.Android/files/SanJuanAPP/"+ nombre);
+
+                img.NF = cliente.BaseAddress + img.NF;
+                img.NR = Regex.Replace(img.NR, "<.*?>", String.Empty);
+                Notas.Add(img);
+
+                //Notas.Add(img);
+
             }
+            
             
 
             //carousel.ItemsSource =  resp.Select(x => new List<Uri> { cliente.BaseAddress. x.NF}).ToList();
-            carousel.ItemsSource = x;//;resp.Select(x => new List<string> { cliente.BaseAddress +  x.NF }).ToList(); 
+            carousel.ItemsSource = Notas;//;resp.Select(x => new List<string> { cliente.BaseAddress +  x.NF }).ToList(); 
 
-
+            
 
             AgregarDptos();
             //SincronizarDatos();
 
         }
 
+        
+            
+            
         
 
         public void SincronizarDatos()
