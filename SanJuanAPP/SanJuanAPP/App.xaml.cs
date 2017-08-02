@@ -13,6 +13,7 @@ namespace SanJuanAPP
         {
             InitializeComponent();
 
+
             MainPage = new SanJuanAPP.MainPage();
         }
 
