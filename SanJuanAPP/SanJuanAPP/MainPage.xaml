@@ -5,9 +5,6 @@
              x:Class="SanJuanAPP.MainPage"
              
              >
-
-
-
     <Grid>
         <Label Text="Sincronizando.... por favor espere" HorizontalOptions="Center" VerticalOptions="Center"></Label>
         <Grid x:Name="SplashGrid" BackgroundColor="{StaticResource Primary}">

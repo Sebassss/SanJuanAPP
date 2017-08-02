@@ -7,17 +7,6 @@
     <ScrollView >
 
 
-        <Grid x:Name="SplashGrid" BackgroundColor="{StaticResource Primary}">
-            <Image x:Name="Logo" Source="icon.png" HorizontalOptions="Center" VerticalOptions="Center">
-                <Image.TranslationY>
-                    <OnPlatform x:TypeArguments="x:Double">
-                        <On Platform="iOS">0</On>
-                        <On Platform="Android">-12</On>
-                    </OnPlatform>
-                </Image.TranslationY>
-            </Image>
-        </Grid>
-
 
         <Grid BackgroundColor="#940f12"  >
             <Grid.RowDefinitions>
@@ -37,9 +26,6 @@
 
 
             <Image  Source="mainBanner.png" Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="0"  />
-
-
-
 
             <forms:CarouselViewControl x:Name="carousel" Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#333" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="300">
                 <forms:CarouselViewControl.ItemTemplate>
@@ -76,7 +62,7 @@
 
                     <Button ClassId="btnEncontrarCs"   BackgroundColor="#fff"  TextColor="#000" Grid.ColumnSpan="3" Clicked="Button_btnEncontrar_Clicked"></Button>
 
-                    <Label ClassId="btnEncontrarCs" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Grid.ColumnSpan="2" Text="Encontrar Centros de Salud"  TextColor="#000">
+                    <Label FontAttributes="Bold" TextColor="#940f12" ClassId="btnEncontrarCs" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Grid.ColumnSpan="2" Text="Encontrar Centros de Salud"  >
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
                         </Label.GestureRecognizers>
@@ -108,14 +94,13 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Button Clicked="Button_btnProtur_Clicked"
+                    <Button  Clicked="Button_btnProtur_Clicked"
                         BackgroundColor="#fff"  
                         Grid.ColumnSpan="3"
                     ></Button>
 
-                    <Label ClassId="btnProtur"
-                        Text="Turnos Programados"
-                        TextColor="#000"
+                    <Label FontAttributes="Bold" TextColor="#940f12" ClassId="btnProtur"
+                        Text="PROTUR"
                         Grid.Column="1"
                         Grid.ColumnSpan="2"
                         HorizontalOptions="Center"
@@ -166,7 +151,7 @@
 
                     <Label ClassId="btnAyuda"
                     Text="Ayuda"
-                    TextColor="#000"
+                    FontAttributes="Bold" TextColor="#940f12"
                     Grid.Column="1"
                     VerticalOptions="Center"
                     HorizontalOptions="Center">

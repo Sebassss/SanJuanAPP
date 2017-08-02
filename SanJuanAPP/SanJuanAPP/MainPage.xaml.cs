@@ -36,7 +36,7 @@ namespace SanJuanAPP
                 Logo.ScaleTo(10, 2000)
                 );
 
-            Navigation.PushModalAsync(new Views.Home());
+            await Navigation.PushModalAsync(new Views.Home());
 
         }
 

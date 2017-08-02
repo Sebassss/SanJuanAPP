@@ -61,16 +61,11 @@ namespace SanJuanAPP.Views
                 img.NR = Regex.Replace(img.NR, "<.*?>", String.Empty);
                 Notas.Add(img);
 
-                //Notas.Add(img);
-
             }
-
 
 
             //carousel.ItemsSource =  resp.Select(x => new List<Uri> { cliente.BaseAddress. x.NF}).ToList();
             carousel.ItemsSource = Notas;//;resp.Select(x => new List<string> { cliente.BaseAddress +  x.NF }).ToList(); 
-
-
 
             AgregarDptos();
             //SincronizarDatos();
@@ -162,7 +157,6 @@ namespace SanJuanAPP.Views
             }
             */
         }
-
 
         private void AgregarDptos()
         {
@@ -303,7 +297,6 @@ namespace SanJuanAPP.Views
 
         }
 
-
         private void btnAyuda()
         {
             //((NavigationPage)this.Parent).PushAsync(new Views.Ayuda());
@@ -315,6 +308,7 @@ namespace SanJuanAPP.Views
             //((NavigationPage)this.Parent).PushAsync(new Views.Protur());
             Navigation.PushModalAsync(new Views.Protur());
         }
+
         public void btnEncontrar()
         {
             Navigation.PushModalAsync(new Views.GpsOrDpto());

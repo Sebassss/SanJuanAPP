@@ -3,4 +3,81 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SanJuanAPP.Views.Protur">
     <Label Text="Protur" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+    <ScrollView Padding="10,12" BackgroundColor="#fff">
+
+        <Grid BackgroundColor="#fff"  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"  />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            
+                <Label FontSize="16" Grid.ColumnSpan="2"  FontAttributes="Bold" TextColor="#940f12" Grid.Row="0" Text="Para obtener un turno programado en un Centro de Salud más próximos a su domicilio, le pedimos que complete los datos del formulario y un PROTUR se estará comunicando a la mayor brevedad posible con usted. El objetivo es brindar eficacia en la atención de la salud para la población cuando solicita una prestación. Para una mejor atención a toda la población de San Juan en los centros de salud públicos."></Label>
+            
+            
+                <BoxView  Grid.Row="1"  VerticalOptions="Center" Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               HeightRequest="1"
+               WidthRequest="50"  
+               Color="#5b5d68"></BoxView>
+            
+
+            <Label VerticalOptions="Center" FontSize="16" FontAttributes="Bold" TextColor="#940f12" Grid.Row="2" Grid.Column="0" Text="DNI del Titular"></Label>
+            <Entry VerticalOptions="Center" FontAttributes="Bold" TextColor="#940f12" Grid.Row="2" Grid.Column="1" Placeholder="DNI del Titular" />
+
+            <Label VerticalOptions="Center" FontSize="16" FontAttributes="Bold" TextColor="#940f12" Grid.Row="3" Grid.Column="0" Text="Nombre"></Label>
+            <Entry VerticalOptions="Center" FontAttributes="Bold" TextColor="#940f12" Grid.Row="3" Grid.Column="1" Placeholder="Nombre" />
+
+            <Label VerticalOptions="Center" FontSize="16" FontAttributes="Bold" TextColor="#940f12" Grid.Row="4" Grid.Column="0" Text="Apellido"></Label>
+            <Entry VerticalOptions="Center" FontAttributes="Bold" TextColor="#940f12" Grid.Row="4" Grid.Column="1" Placeholder="Apellido" />
+
+            <Label VerticalOptions="Center" FontSize="16" FontAttributes="Bold" TextColor="#940f12" Grid.Row="5" Grid.Column="0" Text="Sexo"></Label>
+            <Entry VerticalOptions="Center" FontAttributes="Bold" TextColor="#940f12" Grid.Row="5" Grid.Column="1" Placeholder="Sexo" />
+
+            <Label VerticalOptions="Center" FontSize="16" FontAttributes="Bold" TextColor="#940f12" Grid.Row="6" Grid.Column="0" Text="Fecha de Nacimiento"></Label>
+            <DatePicker VerticalOptions="Center" TextColor="#940f12" Grid.Row="6" Grid.Column="1"  x:Name="StartDatePicker" Format="dd-MM-yyyy" />
+
+            <Label VerticalOptions="Center" FontSize="16" FontAttributes="Bold" TextColor="#940f12" Grid.Row="7" Grid.Column="0" Text="Departamento"></Label>
+            <Entry VerticalOptions="Center" FontAttributes="Bold" TextColor="#940f12" Grid.Row="7" Grid.Column="1" Placeholder="Departamento" />
+
+            <Label VerticalOptions="Center" FontSize="16" FontAttributes="Bold" TextColor="#940f12" Grid.Row="8" Grid.Column="0" Text="Localidad"></Label>
+            <Entry VerticalOptions="Center" FontAttributes="Bold" TextColor="#940f12" Grid.Row="8" Grid.Column="1" Placeholder="Localidad" />
+
+            <Label VerticalOptions="Center" FontSize="16" FontAttributes="Bold" TextColor="#940f12" Grid.Row="9" Grid.Column="0" Text="Teléfono"></Label>
+            <Entry VerticalOptions="Center" FontAttributes="Bold" TextColor="#940f12" Grid.Row="9" Grid.Column="1" Placeholder="Teléfono" />
+
+            <Label VerticalOptions="Center" FontSize="16" FontAttributes="Bold" TextColor="#940f12" Grid.Row="10" Grid.Column="0" Text="Otro Teléfono"></Label>
+            <Entry VerticalOptions="Center" FontAttributes="Bold" TextColor="#940f12" Grid.Row="10" Grid.Column="1" Placeholder="Otro Teléfono" />
+
+            <Label VerticalOptions="Center" FontSize="16" FontAttributes="Bold" TextColor="#940f12" Grid.Row="11" Grid.Column="0" Text="E-Mail"></Label>
+            <Entry VerticalOptions="Center" FontAttributes="Bold" TextColor="#940f12" Grid.Row="11" Grid.Column="1" Placeholder="E-Mail" />
+
+            <Label VerticalOptions="Center" FontSize="16" FontAttributes="Bold" TextColor="#940f12" Grid.Row="12" Grid.Column="0" Text="Comentarios"></Label>
+            <Entry VerticalOptions="Center" FontAttributes="Bold" TextColor="#940f12" Grid.Row="12" Grid.Column="1" Placeholder="Comentarios" />
+
+            <Label VerticalOptions="Center" FontSize="16" FontAttributes="Bold" TextColor="#940f12" Grid.Row="13" Grid.Column="0" Text="Domicilio"></Label>
+            <Entry VerticalOptions="Center" FontAttributes="Bold" TextColor="#940f12" Grid.Row="13" Grid.Column="1" Placeholder="Domicilio" />
+            
+            <Button FontAttributes="Bold" TextColor="#940f12" Grid.Row="14" Grid.ColumnSpan="2" Text="Enviar"></Button>
+        </Grid>
+    </ScrollView>
 </ContentPage> 
