@@ -36,8 +36,8 @@
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
                             <Image Grid.RowSpan="2" Aspect="AspectFill" Source="{Binding NF}"/>
-                            <StackLayout Grid.Row="1" BackgroundColor="#80000000" Padding="12">
-                                <Label TextColor="White" Text="{Binding NR}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                            <StackLayout Grid.Row="1" BackgroundColor="Black" Opacity="0.8"  Padding="12">
+                                <Label TextColor="White" Text="{Binding NT}" FontAttributes="Bold"  FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
                             </StackLayout>
                         </Grid>
 
@@ -49,8 +49,8 @@
 
 
 
-            <Frame CornerRadius="10"  Grid.ColumnSpan="2"  Grid.Row="2" Grid.Column="0" OutlineColor="Red" Padding="0">
-                <Grid Grid.ColumnSpan="2" >
+            <!--<Frame CornerRadius="10"  Grid.ColumnSpan="2"  Grid.Row="2" Grid.Column="0" OutlineColor="Red" Padding="0">-->
+            <Grid Grid.ColumnSpan="2"   Grid.Row="2" Grid.Column="0" Padding="10,12" >
                     <Grid.RowDefinitions>
                         <RowDefinition  Height="*" />
                     </Grid.RowDefinitions>
@@ -75,14 +75,14 @@
                     </Image>
 
                 </Grid>
-            </Frame>
+            <!--</Frame>-->
 
 
             <!--END botón de mapa-->
 
             <!--START botón de protur-->
-            <Frame CornerRadius="10"  Grid.Row="3" Grid.Column="0" OutlineColor="Red" Padding="0">
-                <Grid >
+            <!--<Frame CornerRadius="10"  Grid.Row="3" Grid.Column="0" OutlineColor="Red" Padding="0">-->
+            <Grid  Grid.Row="3" Grid.Column="0" Padding="10,12">
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -120,13 +120,13 @@
                     </Image>
 
                 </Grid>
-            </Frame>
+            <!--</Frame>-->
             <!--END botón de protur-->
 
 
             <!--START botón de ayuda-->
-            <Frame CornerRadius="10"   Grid.Row="3" Grid.Column="1" OutlineColor="Red" Padding="0">
-                <Grid >
+            <!--<Frame CornerRadius="10"   Grid.Row="3" Grid.Column="1" OutlineColor="Red" Padding="0">-->
+            <Grid  Grid.Row="3" Grid.Column="1" Padding="10,12">
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -160,7 +160,7 @@
                         </Label.GestureRecognizers>
                     </Label>
                 </Grid>
-            </Frame>
+            <!--</Frame>-->
             <!--END botón de ayuda-->
 
             <!--<Label BackgroundColor="#000" Text="protur" Grid.Row="3" Grid.Column="0" />-->

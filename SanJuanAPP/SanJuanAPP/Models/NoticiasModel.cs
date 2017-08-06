@@ -35,6 +35,8 @@ namespace SanJuanAPP.Models
         private int oid;
         private string nr;
         private string nfec;
+        private string nt;
+        private string nd;
 
         public int NID
         {
@@ -51,6 +53,39 @@ namespace SanJuanAPP.Models
                 }
             }
         }
+
+        public string ND
+        {
+            get
+            {
+                return nd;
+            }
+            set
+            {
+                if (nd != value)
+                {
+                    nd = value;
+                    OnPropertyChanged("nd");
+                }
+            }
+        }
+
+        public string NT
+        {
+            get
+            {
+                return nt;
+            }
+            set
+            {
+                if (nt != value)
+                {
+                    nt = value;
+                    OnPropertyChanged("nt");
+                }
+            }
+        }
+
         public string NF
         {
             get

@@ -12,6 +12,7 @@ namespace SanJuanAPP.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Protur : ContentPage
     {
+
         public Protur()
         {
             InitializeComponent();
